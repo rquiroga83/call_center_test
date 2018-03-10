@@ -5,7 +5,7 @@
  */
 package com.almundo.call.invoker;
 
-import com.almundo.call.Command;
+import com.almundo.call.command.Command;
 import com.almundo.dto.CommandResultDto;
 
 /**
@@ -15,9 +15,9 @@ import com.almundo.dto.CommandResultDto;
  * 
  * @author andres
  */
-public class CallDispatcher {
+public class CommandInvoker {
     
-    public CommandResultDto dispatchCall(Command cmd){
+    public CommandResultDto invoke(Command cmd){
         return cmd.execute();
     }
     

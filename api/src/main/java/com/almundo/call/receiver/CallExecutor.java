@@ -19,7 +19,7 @@ public class CallExecutor {
         
     }
     
-    public CommandResultDto makeCall() {
+    public CommandResultDto dispatchCall() {
         CommandResultDto result = new CommandResultDto();
         result.setResult(AppConstants.RESULT_SUCESS);
         

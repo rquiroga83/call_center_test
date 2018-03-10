@@ -11,5 +11,10 @@ package com.almundo.constants;
  */
 public class AppConstants {
     public static int RESULT_SUCESS = 0;
-    public static int RESULT_FAIL = 0;
+    public static int RESULT_FAIL = -1;
+    
+    // Cosigos de error
+    public static int ERROR_NEW_CALL = 1;
+    public static int ERROR_DELETE_CALL = 2;
+    public static int ERROR_DELETE_CALL_NOT_EXIST = 3;
 }

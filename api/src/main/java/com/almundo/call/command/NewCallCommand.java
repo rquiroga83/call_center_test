@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.almundo.call;
+package com.almundo.call.command;
 
 import com.almundo.call.receiver.CallExecutor;
 import com.almundo.dto.CommandResultDto;
@@ -24,7 +24,7 @@ public class NewCallCommand implements Command {
 
     @Override
     public CommandResultDto execute() {
-        return executor.makeCall();
+        return executor.dispatchCall();
     }
     
 }
