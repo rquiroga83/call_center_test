@@ -1,0 +1,17 @@
+@startuml
+
+class Employee
+Employee : String id
+Employee : String firstName
+Employee : String lastName
+Employee : String available
+
+class Operator
+class Supervisor
+class Director
+
+Employee <|-- Operator
+Employee <|-- Supervisor
+Employee <|-- Director
+
+@enduml

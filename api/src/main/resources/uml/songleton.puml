@@ -1,0 +1,30 @@
+@startuml
+
+class Thread
+class Call 
+Call : Employee employee
+
+Call : + void run()
+Call : + void freeCall()
+
+
+class Central << (S,#FF7700) Singleton >>
+Central : {static} Central central
+Central : ArrayList<Call> CALLS
+
+Central : - Central()
+Central : + {static} Central getSingletonInstance()
+Central : + int setNewCall(Call call)
+Central : + int deleteCall(Call call)
+
+
+
+Thread <|-- Call
+Call - Central : CALLS >
+
+
+
+
+
+
+@enduml

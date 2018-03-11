@@ -11,7 +11,7 @@ import com.almundo.dto.CommandResultDto;
 /**
  *
  * Patron de diseño Command
- * Comando de ejecicion de llamada
+ * Comando de ejecucion de llamada
  * @author andres
  */
 public class NewCallCommand implements Command {

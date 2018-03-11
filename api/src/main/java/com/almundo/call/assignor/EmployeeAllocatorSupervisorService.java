@@ -7,8 +7,6 @@ package com.almundo.call.assignor;
 
 import com.almundo.call.Call;
 import com.almundo.constants.AppConstants;
-import com.almundo.people.Employee;
-import com.almundo.people.Operator;
 import com.almundo.people.Supervisor;
 import com.almundo.people.repository.SupervisorRepository;
 import java.util.List;
