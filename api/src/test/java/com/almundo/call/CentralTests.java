@@ -20,6 +20,10 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 public class CentralTests {
     
+    /**
+     * Test que tealiza prueba de ubicacion de 
+     * llamadas en la central ubicando hasta 10 llamadas
+     */
     @Test
     public void centralTest(){
         System.out.println("***** Test de ubicacion de llamada en la central ");

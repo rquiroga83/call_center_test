@@ -9,7 +9,7 @@ import com.almundo.call.command.Command;
 import com.almundo.dto.CommandResultDto;
 
 /**
- * Command
+ * Patron de diseño Command
  * Clase encargada de realizar la invocaion 
  * de la accion de crear llamada
  * 

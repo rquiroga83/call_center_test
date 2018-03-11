@@ -5,7 +5,15 @@
  */
 package com.almundo.call;
 
+import com.almundo.people.Director;
 import com.almundo.people.Employee;
+import com.almundo.people.Operator;
+import com.almundo.people.Supervisor;
+import com.almundo.people.repository.DirectorRepository;
+import com.almundo.people.repository.OperatorRepository;
+import com.almundo.people.repository.SupervisorRepository;
+import com.almundo.util.BeanUtil;
+import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -62,10 +70,32 @@ public class Call extends Thread {
      * y retira la llamada de la central
      */
     public void stopCall(){
-        if(!isInterrupted() && isAlive() ){
-            this.interrupt();
+        // Coloca el operado como disponible
+        log.debug("********* Empleado a disponible " );
+        if(employee instanceof Operator){
+            log.debug("********* Id de operador " + employee.getId());
+            OperatorRepository repository = BeanUtil.getBean(OperatorRepository.class);
+            Optional<Operator> operator = repository.findById(employee.getId());
+            operator.get().setAvailable("Y");
+            repository.save(operator.get());
+            
+            log.debug("********* Repositorio " + repository.toString());
         }
+        else if(employee instanceof Supervisor){
+            SupervisorRepository repository = BeanUtil.getBean(SupervisorRepository.class);
+            
+        }
+        else if(employee instanceof Director){
+            DirectorRepository repository = BeanUtil.getBean(DirectorRepository.class);
+            
+        }
+        
         Central.getSingletonInstance().deleteCall(this);
+        
+        // Interrumpe el Hilo
+        /*if(!isInterrupted() && isAlive() ){
+            this.interrupt();
+        }*/
     }
 
     /*

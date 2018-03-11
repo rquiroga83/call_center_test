@@ -19,6 +19,10 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 public class CallTests {
     
+    /**
+     * Funcion que prueba la generacion de tiempo 
+     * aleatorio
+     */
     @Test
     public void ramdomTime(){
         System.out.println("***** Test de obtencion de tiempo aleatorio");
@@ -33,7 +37,10 @@ public class CallTests {
         }
     }
     
-    
+    /**
+     * Funcion que testea la creacion de hilo de llamada
+     * y la interrupcion del mismo
+     */
     @Test
     public void callTest(){
         System.out.println("***** Test de creacion y destruccion del hilo de la llamada");
@@ -54,7 +61,7 @@ public class CallTests {
             fail("No se ejecuto correctamente el hilo de la llamada");
         }
         //Detiene la llamada
-        call.stopCall();
+        call.interrupt();
         if(!call.isInterrupted()){
             fail("No se detuvo la ejecucion de la llamada");
         }

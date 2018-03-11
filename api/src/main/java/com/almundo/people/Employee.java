@@ -5,15 +5,28 @@
  */
 package com.almundo.people;
 
+import org.springframework.data.annotation.Id;
+
 /**
  *
  * @author andres
  */
 public class Employee  {
     
+    @Id
     String id;
-    String nombre;
-    String apellido;
+    String firstName;
+    String lastName;
+    String available; 
+    
+    public Employee() {}
+
+    public Employee(String firstName, String lastName, String available) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.available = available;
+    }
+
 
     public String getId() {
         return id;
@@ -23,19 +36,31 @@ public class Employee  {
         this.id = id;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getApellido() {
-        return apellido;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
+
+    public String getAvailable() {
+        return available;
+    }
+
+    public void setAvailable(String available) {
+        this.available = available;
+    }
+
+
+
+
 }

@@ -10,7 +10,7 @@ import com.almundo.dto.CommandResultDto;
 
 /**
  *
- * Command
+ * Patron de diseño Command
  * Comando de ejecicion de llamada
  * @author andres
  */

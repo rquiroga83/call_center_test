@@ -9,6 +9,7 @@ import com.almundo.constants.AppConstants;
 import java.util.ArrayList;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 
 /**
  * Clase singleton que simula una central telefonica con una 
@@ -33,6 +34,7 @@ public class Central {
      * 
      * @return 
      */
+    
     public static Central getSingletonInstance() {
         if (central == null){
             central = new Central();
