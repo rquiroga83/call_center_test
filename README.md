@@ -84,7 +84,7 @@ La central es la simulacion de una central telefonica esta se encuentra represen
 ![alt text](https://github.com/rquiroga83/call_center_test/blob/develop/images/006.png)
 
 ### Ejecucion de la llamada
-Para la ejecuion de la llamada se utiliza un patron de diseño llamado Comando, el cual ejecuta la operacion de llamada encapsulando la peticion en un objeto, para implemtar este patro se utilizan las siguentes calses:
+Para la ejecuion de la llamada se utiliza un patron de diseño llamado Comando, el cual ejecuta la operacion de llamada encapsulando la peticion en un objeto, para implemtar este patron se utilizan las siguentes calses:
 
 * com.almundo.call.command.NewCallCommand: Objeto que ecapsula la peticion de la llamada
 * com.almundo.call.invoker.CommandInvoker: Objeto encargado de la invocacion del comando
@@ -100,7 +100,7 @@ Para el almacenamiento de la lista de empleados que atenderan la llamada se util
 ![alt text](https://github.com/rquiroga83/call_center_test/blob/develop/images/010.png)
 
 ### Selector de empleados
-Para seleccionar el empleado que atendera la llamada se utiliza un patron de diseño llamado Estrategia, el cual teiene 1 estrategia de asignacion para cada tipo de empleado, estas estrategias estan representadas en las clases "com.almundo.call.assignor.EmployeeAllocatorOperatorService", "com.almundo.call.assignor.EmployeeAllocatorSupervisorService" y "com.almundo.call.assignor.EmployeeAllocatorDirectorService", estas estrategias son invocadas en el metodo "dispatchCall" de la clase "CallExecutor" aca se ejecuta secuencialemnte una por una hasta encontrar un empleado diponible.
+Para seleccionar el empleado que atendera la llamada se utiliza un patron de diseño llamado Estrategia, el cual tiene 1 estrategia de asignacion para cada tipo de empleado, estas estrategias estan representadas en las clases "com.almundo.call.assignor.EmployeeAllocatorOperatorService", "com.almundo.call.assignor.EmployeeAllocatorSupervisorService" y "com.almundo.call.assignor.EmployeeAllocatorDirectorService", estas estrategias son invocadas en el metodo "dispatchCall" de la clase "CallExecutor" aca se ejecuta secuencialemnte una por una hasta encontrar un empleado disponible.
 
 
 ![alt text](https://github.com/rquiroga83/call_center_test/blob/develop/images/011.png)
@@ -111,7 +111,7 @@ Cuando no hay un agente que atienda la llamada o la central se encuentra llena, 
 
 # Unit Tests
 
-En el desarrollo existen los siguentes Test Units
+En el desarrollo existen los siguentes Unit Test.
 
 ### CallTests
 
@@ -119,10 +119,10 @@ Prueba la clase Call, con un test de la generacion de tiempo aleatorio y un test
 
 ### CentralTests
 
-Pureba las clase Central, se manupula la ubicacion de llamadas en la centra, testeando los errores de sobrepaso de la capacidad de la central, y una pueba de concurrencia de llamadas
+Pureba las clase Central, se manupula la ubicacion de llamadas en la centra, testeando los errores de sobrepaso de la capacidad de la central, y una pueba de concurrencia de llamadas.
 
 ### NewCallCommandTests
-Prueba la ejecucion del comando de creacion de llamada (Clase NewCallCommand y todo la estructura del patron comando), se realiza la prueba de creacion de una llamada con el comando, se testea el proceso de llamada en espera cuando no existen agentes que atiendan la llamada y testea el proceso de cola de llamadas cuando la central esta llena.
+Prueba la ejecucion del comando de creacion de llamada (Clase NewCallCommand y toda la estructura del patron comando y estartegia), se realiza la prueba de creacion de una llamada con el comando, se testea el proceso de llamada en espera cuando no existen agentes que atiendan la llamada y testea el proceso de cola de llamadas cuando la central esta llena.
 
 
 
