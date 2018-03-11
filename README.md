@@ -109,7 +109,7 @@ Para seleccionar el empleado que atendera la llamada se utiliza un patron de dis
 
 Cuando no hay un agente que atienda la llamada o la central se encuentra llena, la central tiene una cola FIFO la cual almacena la llamada y la deja en espera en el momento que se finalizan las llamdas en curso, asigna automaticamente las llamadas de la cola a la central con un empleado disponible, este proceso se puede revisar en las funciones "freeCall()" de la clase "Call" y la funcion "dispatchCall()" de la clase "CallExecutor"
 
-# Test units
+# Unit Tests
 
 En el desarrollo existen los siguentes Test Units
 
