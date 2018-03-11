@@ -1,0 +1,76 @@
+2018-03-11 08:01:41.574  INFO 13258 --- [restartedMain] com.almundo.Application                  : Starting Application on andres-ub with PID 13258 (/home/andres/Trabajo/call_center_test/api/target/classes started by andres in /home/andres/Trabajo/call_center_test/api)
+2018-03-11 08:01:41.585 DEBUG 13258 --- [restartedMain] com.almundo.Application                  : Running with Spring Boot v2.0.0.RELEASE, Spring v5.0.4.RELEASE
+2018-03-11 08:01:41.587  INFO 13258 --- [restartedMain] com.almundo.Application                  : No active profile set, falling back to default profiles: default
+2018-03-11 08:01:41.718  INFO 13258 --- [restartedMain] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@368acde8: startup date [Sun Mar 11 08:01:41 COT 2018]; root of context hierarchy
+2018-03-11 08:01:44.736  INFO 13258 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2018-03-11 08:01:44.770  INFO 13258 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-03-11 08:01:44.770  INFO 13258 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.28
+2018-03-11 08:01:44.784  INFO 13258 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/lib/jvm/java-8-oracle/jre/lib/amd64:/usr/lib/jvm/java-8-oracle/jre/lib/i386::/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+2018-03-11 08:01:44.933  INFO 13258 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-03-11 08:01:44.934  INFO 13258 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3216 ms
+2018-03-11 08:01:45.112  INFO 13258 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2018-03-11 08:01:45.118  INFO 13258 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-03-11 08:01:45.119  INFO 13258 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-03-11 08:01:45.120  INFO 13258 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-03-11 08:01:45.120  INFO 13258 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-03-11 08:01:45.608  INFO 13258 --- [restartedMain] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=MULTIPLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2018-03-11 08:01:45.609  INFO 13258 --- [restartedMain] org.mongodb.driver.cluster               : Adding discovered server localhost:27017 to client view of cluster
+2018-03-11 08:01:45.685  INFO 13258 --- [cluster-ClusterId{value='5aa528b98ef30633cabb1313', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:6}] to localhost:27017
+2018-03-11 08:01:45.691  INFO 13258 --- [cluster-ClusterId{value='5aa528b98ef30633cabb1313', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 6, 3]}, minWireVersion=0, maxWireVersion=6, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=4460382}
+2018-03-11 08:01:45.695  INFO 13258 --- [cluster-ClusterId{value='5aa528b98ef30633cabb1313', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Discovered cluster type of STANDALONE
+2018-03-11 08:01:46.556  INFO 13258 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@368acde8: startup date [Sun Mar 11 08:01:41 COT 2018]; root of context hierarchy
+2018-03-11 08:01:46.652  INFO 13258 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/callservice/newcall],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity com.almundo.rest.CallService.newCall()
+2018-03-11 08:01:46.658  INFO 13258 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-03-11 08:01:46.664  INFO 13258 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-03-11 08:01:46.702  INFO 13258 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-03-11 08:01:46.703  INFO 13258 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-03-11 08:01:46.742  INFO 13258 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-03-11 08:01:46.775  WARN 13258 --- [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2018-03-11 08:01:47.126  INFO 13258 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2018-03-11 08:01:47.212  INFO 13258 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-03-11 08:01:47.324  INFO 13258 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2018-03-11 08:01:47.327  INFO 13258 --- [restartedMain] com.almundo.Application                  : Started Application in 6.812 seconds (JVM running for 7.619)
+2018-03-11 08:02:06.272  INFO 13258 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-03-11 08:02:06.273  INFO 13258 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2018-03-11 08:02:06.286  INFO 13258 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 13 ms
+2018-03-11 08:02:06.367 DEBUG 13258 --- [http-nio-8080-exec-2] com.almundo.call.receiver.CallExecutor   : *** Asignacion de empleado
+2018-03-11 08:02:06.367 DEBUG 13258 --- [http-nio-8080-exec-2] c.a.c.a.EmployeeAllocatorOperatorService : ****  Busca operadores disponibles
+2018-03-11 08:02:06.467  INFO 13258 --- [http-nio-8080-exec-2] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:7}] to localhost:27017
+2018-03-11 08:02:06.528 DEBUG 13258 --- [http-nio-8080-exec-2] c.a.c.a.EmployeeAllocatorOperatorService : ****  Operadores recuperados: 8
+2018-03-11 08:02:06.587 DEBUG 13258 --- [Thread-10] com.almundo.call.Call                    : Begin call id= 42
+2018-03-11 08:02:06.587 DEBUG 13258 --- [http-nio-8080-exec-2] com.almundo.call.Central                 : Llamada establecida llamadas en la centra: 1
+2018-03-11 08:02:06.588 DEBUG 13258 --- [http-nio-8080-exec-2] com.almundo.call.receiver.CallExecutor   : Operator has assigned to call 42
+2018-03-11 08:02:12.589 DEBUG 13258 --- [Thread-10] com.almundo.call.Call                    : ********* Establece empleado empleado diponible 
+2018-03-11 08:02:12.589 DEBUG 13258 --- [Thread-10] com.almundo.call.Call                    : ********* Id de operador 5aa4acddb9224f7046d166d2
+2018-03-11 08:02:12.598 DEBUG 13258 --- [Thread-10] com.almundo.call.Central                 : Llamada eliminada de la central id: 42
+2018-03-11 08:02:12.599 DEBUG 13258 --- [Thread-10] com.almundo.call.Call                    : End call id= 42
+2018-03-11 08:02:56.382 DEBUG 13258 --- [http-nio-8080-exec-5] com.almundo.call.receiver.CallExecutor   : *** Asignacion de empleado
+2018-03-11 08:02:56.383 DEBUG 13258 --- [http-nio-8080-exec-5] c.a.c.a.EmployeeAllocatorOperatorService : ****  Busca operadores disponibles
+2018-03-11 08:02:56.391 DEBUG 13258 --- [http-nio-8080-exec-5] c.a.c.a.EmployeeAllocatorOperatorService : ****  Operadores recuperados: 8
+2018-03-11 08:02:56.397 DEBUG 13258 --- [http-nio-8080-exec-5] com.almundo.call.Central                 : Llamada establecida llamadas en la centra: 1
+2018-03-11 08:02:56.398 DEBUG 13258 --- [http-nio-8080-exec-5] com.almundo.call.receiver.CallExecutor   : Operator has assigned to call 43
+2018-03-11 08:02:56.397 DEBUG 13258 --- [Thread-11] com.almundo.call.Call                    : Begin call id= 43
+2018-03-11 08:03:03.399 DEBUG 13258 --- [Thread-11] com.almundo.call.Call                    : ********* Establece empleado empleado diponible 
+2018-03-11 08:03:03.400 DEBUG 13258 --- [Thread-11] com.almundo.call.Call                    : ********* Id de operador 5aa4acddb9224f7046d166d2
+2018-03-11 08:03:03.406 DEBUG 13258 --- [Thread-11] com.almundo.call.Central                 : Llamada eliminada de la central id: 43
+2018-03-11 08:03:03.407 DEBUG 13258 --- [Thread-11] com.almundo.call.Call                    : End call id= 43
+2018-03-11 08:03:10.909 DEBUG 13258 --- [http-nio-8080-exec-6] com.almundo.call.receiver.CallExecutor   : *** Asignacion de empleado
+2018-03-11 08:03:10.909 DEBUG 13258 --- [http-nio-8080-exec-6] c.a.c.a.EmployeeAllocatorOperatorService : ****  Busca operadores disponibles
+2018-03-11 08:03:10.916 DEBUG 13258 --- [http-nio-8080-exec-6] c.a.c.a.EmployeeAllocatorOperatorService : ****  Operadores recuperados: 8
+2018-03-11 08:03:10.921 DEBUG 13258 --- [http-nio-8080-exec-6] com.almundo.call.Central                 : Llamada establecida llamadas en la centra: 1
+2018-03-11 08:03:10.921 DEBUG 13258 --- [Thread-12] com.almundo.call.Call                    : Begin call id= 44
+2018-03-11 08:03:10.921 DEBUG 13258 --- [http-nio-8080-exec-6] com.almundo.call.receiver.CallExecutor   : Operator has assigned to call 44
+2018-03-11 08:03:12.213 DEBUG 13258 --- [http-nio-8080-exec-7] com.almundo.call.receiver.CallExecutor   : *** Asignacion de empleado
+2018-03-11 08:03:12.214 DEBUG 13258 --- [http-nio-8080-exec-7] c.a.c.a.EmployeeAllocatorOperatorService : ****  Busca operadores disponibles
+2018-03-11 08:03:12.221 DEBUG 13258 --- [http-nio-8080-exec-7] c.a.c.a.EmployeeAllocatorOperatorService : ****  Operadores recuperados: 7
+2018-03-11 08:03:12.230 DEBUG 13258 --- [http-nio-8080-exec-7] com.almundo.call.Central                 : Llamada establecida llamadas en la centra: 2
+2018-03-11 08:03:12.230 DEBUG 13258 --- [http-nio-8080-exec-7] com.almundo.call.receiver.CallExecutor   : Operator has assigned to call 45
+2018-03-11 08:03:12.233 DEBUG 13258 --- [Thread-13] com.almundo.call.Call                    : Begin call id= 45
+2018-03-11 08:03:18.922 DEBUG 13258 --- [Thread-12] com.almundo.call.Call                    : ********* Establece empleado empleado diponible 
+2018-03-11 08:03:18.923 DEBUG 13258 --- [Thread-12] com.almundo.call.Call                    : ********* Id de operador 5aa4acddb9224f7046d166d2
+2018-03-11 08:03:18.930 DEBUG 13258 --- [Thread-12] com.almundo.call.Central                 : Llamada eliminada de la central id: 44
+2018-03-11 08:03:18.930 DEBUG 13258 --- [Thread-12] com.almundo.call.Call                    : End call id= 44
+2018-03-11 08:03:21.234 DEBUG 13258 --- [Thread-13] com.almundo.call.Call                    : ********* Establece empleado empleado diponible 
+2018-03-11 08:03:21.234 DEBUG 13258 --- [Thread-13] com.almundo.call.Call                    : ********* Id de operador 5aa4acddb9224f7046d166d3
+2018-03-11 08:03:21.241 DEBUG 13258 --- [Thread-13] com.almundo.call.Central                 : Llamada eliminada de la central id: 45
+2018-03-11 08:03:21.242 DEBUG 13258 --- [Thread-13] com.almundo.call.Call                    : End call id= 45

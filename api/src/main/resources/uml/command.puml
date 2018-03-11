@@ -1,0 +1,36 @@
+@startuml
+
+
+interface Command << Interface >>
+Command : {abstract} void execute()
+
+class NewCallCommand
+NewCallCommand : CallExecutor executor
+NewCallCommand : + NewCallCommand(CallExecutor executor)
+NewCallCommand : + CommandResultDto execute()
+
+class CommandInvoker
+CommandInvoker : + CommandResultDto invoke(Command cmd
+
+note top of CallExecutor : Ejecuta la accion\nde creacion de la llamada.
+class CallExecutor
+CallExecutor : + CommandResultDto dispatchCall()
+CallExecutor : + CommandResultDto dispatchCall(Call call)
+
+
+note top of CallService : Servicio rest expuesto en el recurso\nlocalhost:8080/callservice/newcall.
+class CallService
+CallService : + ResponseEntity newCall()
+
+
+
+
+NewCallCommand - CallExecutor : < executor
+Command <|-- NewCallCommand
+CommandInvoker - Command 
+
+CallService --> CallExecutor 
+CallService --> NewCallCommand 
+
+
+@enduml

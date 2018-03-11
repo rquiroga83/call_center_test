@@ -1,0 +1,28 @@
+@startuml
+class EmployeeAllocatorService 
+EmployeeAllocatorService : + {abstract} int allocateEmployee(Call call)
+
+class EmployeeAllocatorOperatorService
+EmployeeAllocatorOperatorService : - OperatorRepository repository
+EmployeeAllocatorOperatorService : + int allocateEmployee(Call call) 
+
+class EmployeeAllocatorSupervisorService
+EmployeeAllocatorSupervisorService : - SupervisorRepository repository
+EmployeeAllocatorSupervisorService : + int allocateEmployee(Call call)
+
+class EmployeeAllocatorDirectorService
+EmployeeAllocatorDirectorService : - DirectorRepository repository
+EmployeeAllocatorDirectorService : + int allocateEmployee(Call call)
+
+note top of CallExecutor : Ejecuta la accion\nde creacion de la llamada.
+class CallExecutor
+CallExecutor : + CommandResultDto dispatchCall()
+CallExecutor : + CommandResultDto dispatchCall(Call call)
+
+EmployeeAllocatorService <|-- EmployeeAllocatorOperatorService
+EmployeeAllocatorService <|-- EmployeeAllocatorSupervisorService
+EmployeeAllocatorService <|-- EmployeeAllocatorDirectorService
+
+CallExecutor -- EmployeeAllocatorService 
+
+@enduml

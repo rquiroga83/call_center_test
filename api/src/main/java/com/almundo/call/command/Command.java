@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.almundo.call;
+package com.almundo.call.command;
 
 import com.almundo.dto.CommandResultDto;
 
 /**
- * Command
+ * Patron de diseño Command
  * La interface del comando
  * @author andres
  */

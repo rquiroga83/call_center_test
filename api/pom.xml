@@ -42,6 +42,18 @@
             <scope>test</scope>
         </dependency>
         
+        <!-- Mongo Db -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-mongodb</artifactId>
+        </dependency>
+        
+        <!-- i18n -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
+        
         <!-- dev Tools -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
