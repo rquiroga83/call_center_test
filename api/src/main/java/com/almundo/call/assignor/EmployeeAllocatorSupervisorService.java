@@ -12,6 +12,7 @@ import com.almundo.people.Operator;
 import com.almundo.people.Supervisor;
 import com.almundo.people.repository.SupervisorRepository;
 import java.util.List;
+import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,6 +42,11 @@ public class EmployeeAllocatorSupervisorService extends EmployeeAllocatorService
         if(supervisors.size()>0){
             // Asigna un operador
             call.setEmployee(supervisors.get(0));
+            // Coloca el supervisor como no diponible
+            Optional<Supervisor> supervisor = repository.findById(supervisors.get(0).getId());
+            supervisor.get().setAvailable("N");
+            repository.save(supervisor.get());
+            
             return AppConstants.RESULT_SUCESS;
         }
         else{

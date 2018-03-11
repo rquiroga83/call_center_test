@@ -24,9 +24,11 @@ public class Central {
     
     private static Central central;
     private final  ArrayList<Call> CALLS;
+    private final Fifo<Call> fifo;
     
     private Central() {
         CALLS = new ArrayList();
+        fifo = new Fifo();
     }
 
     /**
@@ -101,6 +103,13 @@ public class Central {
         });
         
         CALLS.clear();
+    }
+    
+    
+    // Get y Set
+
+    public Fifo<Call> getFifo() {
+        return fifo;
     }
     
 }

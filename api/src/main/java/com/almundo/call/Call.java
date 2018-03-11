@@ -5,6 +5,7 @@
  */
 package com.almundo.call;
 
+import com.almundo.call.receiver.CallExecutor;
 import com.almundo.people.Director;
 import com.almundo.people.Employee;
 import com.almundo.people.Operator;
@@ -49,7 +50,7 @@ public class Call extends Thread {
         catch(InterruptedException e){
             log.error("Sleep interrupt -> " + e.getMessage());
         }
-        stopCall();
+        freeCall();
         
         log.debug("End call id= " + this.getId());
     }
@@ -66,31 +67,51 @@ public class Call extends Thread {
     
     
     /**
-     * Funcion que detiene el proceso de llamada
+     * Funcion que libera operador
      * y retira la llamada de la central
      */
-    public void stopCall(){
+    public void freeCall(){
         // Coloca el operado como disponible
-        log.debug("********* Empleado a disponible " );
+        log.debug("********* Establece empleado empleado diponible " );
         if(employee instanceof Operator){
             log.debug("********* Id de operador " + employee.getId());
-            OperatorRepository repository = BeanUtil.getBean(OperatorRepository.class);
-            Optional<Operator> operator = repository.findById(employee.getId());
+            OperatorRepository o_repository = BeanUtil.getBean(OperatorRepository.class);
+            Optional<Operator> operator = o_repository.findById(employee.getId());
             operator.get().setAvailable("Y");
-            repository.save(operator.get());
+            o_repository.save(operator.get());
             
-            log.debug("********* Repositorio " + repository.toString());
         }
         else if(employee instanceof Supervisor){
-            SupervisorRepository repository = BeanUtil.getBean(SupervisorRepository.class);
+            
+            log.debug("********* Id de supervisor " + employee.getId());
+            SupervisorRepository s_repository = BeanUtil.getBean(SupervisorRepository.class);
+            Optional<Supervisor> supervisor = s_repository.findById(employee.getId());
+            supervisor.get().setAvailable("Y");
+            s_repository.save(supervisor.get());
             
         }
         else if(employee instanceof Director){
-            DirectorRepository repository = BeanUtil.getBean(DirectorRepository.class);
+            
+            log.debug("********* Id de director " + employee.getId());
+            DirectorRepository d_repository = BeanUtil.getBean(DirectorRepository.class);
+            Optional<Director> director = d_repository.findById(employee.getId());
+            director.get().setAvailable("Y");
+            d_repository.save(director.get());
             
         }
         
+        // Libera ca cetral
         Central.getSingletonInstance().deleteCall(this);
+        
+        // Si hay llamadas en cola la asigna
+        Call call = Central.getSingletonInstance().getFifo().get();
+        
+        if(call != null){
+            log.debug("********* Despacha llamada desde la cola " + call.getId());
+            CallExecutor executor = BeanUtil.getBean(CallExecutor.class);
+            executor.dispatchCall(call);
+        }
+        
         
         // Interrumpe el Hilo
         /*if(!isInterrupted() && isAlive() ){

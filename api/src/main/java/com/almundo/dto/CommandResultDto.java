@@ -11,6 +11,7 @@ package com.almundo.dto;
  */
 public class CommandResultDto {
     int result;
+    Object info;
     String message;
 
     public int getResult() {
@@ -27,6 +28,14 @@ public class CommandResultDto {
 
     public void setMessage(String message) {
         this.message = message;
+    }
+
+    public Object getInfo() {
+        return info;
+    }
+
+    public void setInfo(Object info) {
+        this.info = info;
     }
     
     

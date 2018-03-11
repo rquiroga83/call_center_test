@@ -11,6 +11,7 @@ import com.almundo.people.Director;
 import com.almundo.people.Employee;
 import com.almundo.people.repository.DirectorRepository;
 import java.util.List;
+import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,7 +34,7 @@ public class EmployeeAllocatorDirectorService extends EmployeeAllocatorService {
     
     @Override
     public int allocateEmployee(Call call) {
-        Employee director = new Director();
+        //Employee director = new Director();
         // Busca directores diponibles
         log.debug("****  Busca directores disponibles"); 
         List<Director> directors = repository.findByAvailable("Y");
@@ -42,6 +43,11 @@ public class EmployeeAllocatorDirectorService extends EmployeeAllocatorService {
         if(directors.size()>0){
             // Asigna un operador
             call.setEmployee(directors.get(0));
+            // Coloca el supervisor como no diponible
+            Optional<Director> director = repository.findById(directors.get(0).getId());
+            director.get().setAvailable("N");
+            repository.save(director.get());
+            
             return AppConstants.RESULT_SUCESS;
         }
         else{

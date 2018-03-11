@@ -39,7 +39,6 @@ public class PeopleTests {
     @Test
     public void createPeopleMongo() {
         
-        
         // Prueba repositorio de operadores
         opRepository.deleteAll();
         

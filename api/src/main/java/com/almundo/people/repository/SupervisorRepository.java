@@ -16,9 +16,6 @@ import org.springframework.data.mongodb.repository.Query;
  */
 public interface SupervisorRepository extends MongoRepository<Supervisor, String> {
     
-    @Query("{ '_id' : ?0 }")
-    public Supervisor findBy_Id(String id);
-    
     public Supervisor findByFirstName(String firstName);
     public List<Supervisor> findByLastName(String lastName);
     public List<Supervisor> findByAvailable(String available);
