@@ -25,7 +25,7 @@ MongoDb y Spring Data
 </dependency>
 ```
 
-Antes de ejecutar el proyecto es necesario tener instalada una base de datos MongoDB (https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/) y configurar los datos de la misma en el archivo "aplication.properties"; por defecto estaen el archivo esta configurada una base de datos en localhost y utiliza el repositorio test para almacenar los documentos (no tiene credenciales de acceso). 
+Antes de ejecutar el proyecto es necesario tener instalada una base de datos MongoDB (https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/) y configurar los datos de la misma en el archivo "aplication.properties"; por defecto el archivo tiene configurada una base de datos en localhost y utiliza el repositorio test para almacenar los documentos (no tiene credenciales de acceso). 
 
 ![alt text](https://github.com/rquiroga83/call_center_test/blob/develop/images/004.png)
 
@@ -33,7 +33,7 @@ Se puede utilizar la herramienta compass para visulizar el contenido de los repo
 
 ![alt text](https://github.com/rquiroga83/call_center_test/blob/develop/images/005.png)
 
-Para el almacenamiento de los datos de pruebas es necesarion hacer la compilacion del proyecto para que el test unit "PeopleTests" almacene los documentos correspondientes a operadores, supervisores y directores.
+Para el almacenamiento de los datos de pruebas es necesario hacer la compilacion del proyecto para que el test unit "PeopleTests" almacene los documentos correspondientes a operadores, supervisores y directores.
 
 
 Cuando el proyecto se ejecuta se expone por el puerto 8080 el recurso 
