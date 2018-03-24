@@ -100,7 +100,7 @@ Para el almacenamiento de la lista de empleados que atenderan la llamada se util
 ![alt text](https://github.com/rquiroga83/call_center_test/blob/develop/images/010.png)
 
 ### Selector de empleados
-Para seleccionar el empleado que atendera la llamada se utiliza un patron de diseño llamado Estrategia, el cual tiene 1 estrategia de asignacion para cada tipo de empleado, estas estrategias estan representadas en las clases "com.almundo.call.assignor.EmployeeAllocatorOperatorService", "com.almundo.call.assignor.EmployeeAllocatorSupervisorService" y "com.almundo.call.assignor.EmployeeAllocatorDirectorService", estas estrategias son invocadas en el metodo "dispatchCall" de la clase "CallExecutor" aca se ejecuta secuencialemnte una por una hasta encontrar un empleado disponible.
+Para seleccionar el empleado que atendera la llamada se utiliza un patron de diseño llamado Estrategia, el cual tiene 1 estrategia de asignacion para cada tipo de empleado, estas estrategias estan representadas en las clases "com.almundo.call.assignor.EmployeeAllocatorOperatorService", "com.almundo.call.assignor.EmployeeAllocatorSupervisorService" y "com.almundo.call.assignor.EmployeeAllocatorDirectorService", estas estrategias son invocadas en el metodo "dispatchCall" de la clase "CallExecutor" aca se ejecuta secuencialmente estrategia por estrategia hasta encontrar un empleado disponible.
 
 
 ![alt text](https://github.com/rquiroga83/call_center_test/blob/develop/images/011.png)
